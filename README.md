@@ -34,3 +34,30 @@ while nth <= count:
     nth +=1
 
     Problem 4 (password strength checker)
+    import re
+password = input("Enter in password")
+flag = 0
+while True:
+    if (len(password)<=8):
+        flag = -1
+        break
+    elif not re.search("[a-z]", password):
+        flag = -1
+        break
+    elif not re.search("[A-Z]", password):
+        flag = -1
+        break
+    elif not re.search("[0-9]", password):
+        flag = -1
+        break
+    elif not re.search("[_@$!#%^&*?]" , password):
+        flag = -1
+        break
+    else:
+        flag = 0
+        print("This is a strong password!")
+        break
+
+if flag == -1:
+    print("This is a weak password!")
+
